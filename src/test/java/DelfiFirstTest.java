@@ -11,6 +11,7 @@
 //        driver.get("http://delfi.lv");
 //    }
 //}
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,13 +27,15 @@ public class DelfiFirstTest {
     private final String HOME_PAGE = "http://rus.delfi.lv";
     private final String HOME_PAGE_MOBILE = "http://m.rus.delfi.lv";
     private final By MOBILE_ARTICLE_TITLE = By.xpath(".//a[@class = 'md-scrollpos']");
+    WebDriver browser;
+
     // private String articleNameToCheck = "Воскресенье стало самым теплым 14 октября в истории метеонаблюдений";
 
 
     @Test
     public void checkFirstArticle() {
         System.setProperty("webdriver.gecko.driver", "c:/geckodriver.exe");
-        WebDriver browser = new FirefoxDriver();
+        browser = new FirefoxDriver();
         browser.manage().window().maximize();
         browser.get(HOME_PAGE);
 
@@ -55,7 +58,11 @@ public class DelfiFirstTest {
         for (int i = 0; i < 5; i++) {
             Assertions.assertEquals(names.get(i), mobile_names.get(i), "Article" + i + "not right");
         }
+    }
 
+    @AfterEach
+    public void closeBrowser() {
+        browser.close();
     }
 }
 
