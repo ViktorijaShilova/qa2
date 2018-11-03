@@ -1,16 +1,3 @@
-//import org.junit.jupiter.api.Test;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
-//
-//public class DelfiFirstTest {
-//    @Test
-//    public void delfiFirstTitleTest() {
-//        System.setProperty("webdriver.gecko.driver", "c:/geckodriver.exe");
-//        WebDriver driver = new FirefoxDriver();
-//        driver.manage().window().maximize();
-//        driver.get("http://delfi.lv");
-//    }
-//}
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -28,9 +15,6 @@ public class DelfiFirstTest {
     private final String HOME_PAGE_MOBILE = "http://m.rus.delfi.lv";
     private final By MOBILE_ARTICLE_TITLE = By.xpath(".//a[@class = 'md-scrollpos']");
     WebDriver browser;
-
-    // private String articleNameToCheck = "Воскресенье стало самым теплым 14 октября в истории метеонаблюдений";
-
 
     @Test
     public void checkFirstArticle() {
@@ -66,21 +50,3 @@ public class DelfiFirstTest {
     }
 }
 
-    //public void checkMobileArticle() {
-    //    WebDriver browser = new FirefoxDriver();
-     //   browser.manage().window().maximize();
-
-
-//        return mobile_names;
-//    }
-//    public void compareArticles() {
-//        List<String> webNames = checkFirstArticle();
-//        List<String> mobileNames = checkMobileArticle();
-//
-//        Assertions.assertEquals(webNames, mobileNames);
-//    }
-
-
-        //Check if this is correct article
-     //   Assertions.assertEquals(articleNameToCheck, article.getText(), "This is not true Article!");
- //   }
