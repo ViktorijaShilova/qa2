@@ -26,7 +26,7 @@ public class DelfiFirstTest {
     private final String HOME_PAGE = "http://rus.delfi.lv";
     private final String HOME_PAGE_MOBILE = "http://m.rus.delfi.lv";
     private final By MOBILE_ARTICLE_TITLE = By.xpath(".//a[@class = 'md-scrollpos']");
-   // private String articleNameToCheck = "Воскресенье стало самым теплым 14 октября в истории метеонаблюдений";
+    // private String articleNameToCheck = "Воскресенье стало самым теплым 14 октября в истории метеонаблюдений";
 
 
     @Test
@@ -57,6 +57,7 @@ public class DelfiFirstTest {
         }
 
     }
+}
 
     //public void checkMobileArticle() {
     //    WebDriver browser = new FirefoxDriver();
@@ -75,5 +76,4 @@ public class DelfiFirstTest {
 
         //Check if this is correct article
      //   Assertions.assertEquals(articleNameToCheck, article.getText(), "This is not true Article!");
-    }
-}
+ //   }
