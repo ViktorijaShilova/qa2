@@ -1,33 +1,38 @@
 package horoscope.pages;
 
 
-import lekcija7.pages.ArticlePage;
-import lekcija7.pages.BaseFunc;
+import food.pages.BaseFunc;
+import food.pages.FoodPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class HomePage {
-    lekcija7.pages.BaseFunc baseFunc;
+import java.util.List;
 
-    private final By ARTICLE = By.xpath(".//span[@class = 'text-size-22']");
-    private final By COMMENT_COUNT = By.xpath(".//a[contains(@class, 'comment-count')]");
+public class HomePage {
+    BaseFunc baseFunc;
+
+    private final By COOKIE = By.xpath(".//a[@class = 'close cookie']");
+    private final By NAME = By.xpath(".//a[contains(@class, 'nav-link')]");
+    private final By HEADER = By.xpath(".//nav[@id = 'quick-site-section-navigation-inner']");
 
     public HomePage(BaseFunc baseFunc) {
+
         this.baseFunc = baseFunc;
     }
 
-    public WebElement getArticleById(int id) {
-        return baseFunc.getElements(ARTICLE).get(id);
+    public void CloseCookie() {
+        baseFunc.getElement(COOKIE).click();
     }
 
-    public Integer getCommentCountById(int id) {
-        String commentCount = getArticleById(id).findElement(COMMENT_COUNT).getText();
-        commentCount = commentCount.substring(1, commentCount.length()-1);
-        return Integer.valueOf(commentCount);
-    }
-
-    public ArticlePage goToArticle(int id) {
-        getArticleById(id).click();
-        return new ArticlePage(baseFunc);
+    public FoodPage getItemByName(String name) {
+        List<WebElement> tabs = baseFunc.getElements(HEADER);
+        for (WebElement we : tabs) {
+            System.out.println(we);
+            if (we.findElement(NAME).getText().equals(name)) {
+                we.click();
+                return new FoodPage(baseFunc);
+            }
+        }
+        return null;
     }
 }
