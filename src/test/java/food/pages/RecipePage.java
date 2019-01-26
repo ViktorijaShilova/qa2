@@ -15,12 +15,12 @@ public class RecipePage {
         this.baseFunc = baseFunc;
     }
 
-    public void recipeIngredients() {
+   /* public void recipeIngredients() {
         List<WebElement> ingredients = baseFunc.findElements(INGREDIENTS);
         List<String> ingredient_list = new ArrayList<String>();
 
         for (int i = 0; i < ingredients.size(); i++) {
             ingredient_list.add(ingredients.get(i)).click();
         }
-    }
+    }*/
 }

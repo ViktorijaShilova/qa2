@@ -12,8 +12,8 @@ public class FoodTest {
         baseFunc.goToUrl(HOME_PAGE);
         HomePage homePage = new HomePage(baseFunc);
         homePage.CloseCookie();
-        FoodPage foodPage = homePage.getItemByName("Еда");
-        RecipePage recipePage = foodPage.getRecipe("Острый соус из апельсинов");
+       // FoodPage foodPage = homePage.getItemByName("Еда");
+      //  RecipePage recipePage = foodPage.getRecipe("Острый соус из апельсинов");
 
     }
 }
